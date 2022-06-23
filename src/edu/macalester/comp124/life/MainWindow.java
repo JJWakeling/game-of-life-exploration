@@ -24,7 +24,7 @@ public class MainWindow extends JFrame
     
     private static final int RUN_DELAY = 250;
 
-    private JButton bStep;
+    private JButton bStep, bLabel;
     private JToggleButton tbRun;
     private GameBoard board;
     private LifeComponent pane;
@@ -88,6 +88,13 @@ public class MainWindow extends JFrame
         
         tb.add(new JToolBar.Separator());
         
+        bLabel = new JButton("Label");
+        bLabel.setActionCommand("label");
+        bLabel.addActionListener(this);
+        tb.add(bLabel);
+        
+        tb.add(new JToolBar.Separator());
+        
         tb.add(new JLabel("Rule set:"));
         ruleSetButtons = new ButtonGroup();
         JRadioButton conway = new JRadioButton("Conway");
@@ -136,6 +143,8 @@ public class MainWindow extends JFrame
             saveFile();
         } else if (cmd.equals("new")) {
             newBoard();
+        } else if (cmd.equals("label")) {
+        	System.out.println("label function called");
         } else if (cmd.equals("step")) {
             board.next();
             pane.repaint();
