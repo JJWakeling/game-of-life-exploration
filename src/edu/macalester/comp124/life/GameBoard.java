@@ -173,6 +173,9 @@ public class GameBoard {
         board[x][y] = state;
     }
     
+    public Pattern pattern() {
+    	return new UnsafePattern(board);
+    }
     /**
      * Computes the next state of the game board.
      */

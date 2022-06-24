@@ -144,7 +144,12 @@ public class MainWindow extends JFrame
         } else if (cmd.equals("new")) {
             newBoard();
         } else if (cmd.equals("label")) {
-        	System.out.println("label function called");
+        	try {
+				System.out.println(board.pattern().label());
+			} catch (Exception e1) {
+				System.out.println("error labelling pattern");
+				e1.printStackTrace();
+			}
         } else if (cmd.equals("step")) {
             board.next();
             pane.repaint();
@@ -214,8 +219,8 @@ public class MainWindow extends JFrame
      * Prompt the user for a size and create a new game board.
      */
     private void newBoard() {
-        JSpinner width = new JSpinner(new SpinnerNumberModel(100, 10, 500, 1));
-        JSpinner height = new JSpinner(new SpinnerNumberModel(100, 10, 500, 1));
+        JSpinner width = new JSpinner(new SpinnerNumberModel(100, 1, 500, 1));
+        JSpinner height = new JSpinner(new SpinnerNumberModel(100, 1, 500, 1));
         int result = JOptionPane.showOptionDialog(this,
                 new Object[] {"Enter dimentions for new board:", width, height},
                 "New Board", JOptionPane.OK_CANCEL_OPTION,
