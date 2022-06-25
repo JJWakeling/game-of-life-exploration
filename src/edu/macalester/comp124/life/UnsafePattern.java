@@ -31,7 +31,7 @@ public class UnsafePattern implements Pattern {
 				boolean liveChain = sides[i][j];
 				
 				int k = 1;
-				while (j + k < sides[i].length && sides[i][j] == liveChain) {
+				while (j + k < sides[i].length && sides[i][j + k] == liveChain) {
 					k++;
 				}
 				
