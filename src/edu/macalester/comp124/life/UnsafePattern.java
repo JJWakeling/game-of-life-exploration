@@ -17,6 +17,10 @@ public class UnsafePattern implements Pattern {
 			return "0";
 		}
 		
+		if (cells.length == 1) {
+			return cells[0][0] ? "a1" : "";
+		}
+		
 		boolean[][] sides = new PatternSides(cells).sides();
 		String[] sideLabels = new String[] {"", "", "", ""};
 		
