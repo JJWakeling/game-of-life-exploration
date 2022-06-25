@@ -74,7 +74,7 @@ public class UnsafePattern implements Pattern {
 		
 		boolean[][] innerCells = new boolean[cells.length - 2][cells.length - 2];
 		for (int i = 0; i < innerCells.length; i++) {
-			for (int j = 0; j < innerCells.length; i++) {
+			for (int j = 0; j < innerCells.length; j++) {
 				innerCells[i][j] = cells[i + 1][j + 1];
 			}
 		}
