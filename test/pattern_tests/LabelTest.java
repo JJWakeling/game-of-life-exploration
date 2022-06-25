@@ -77,7 +77,7 @@ public class LabelTest {
 		testUnsafePattern(
 			new boolean[][] {
 				{true, false, true},
-				{false, false, false}
+				{false, false, false},
 				{false, false, false}
 			},
 			"c1,1"
