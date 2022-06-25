@@ -8,9 +8,9 @@ public class PatternSides {
 		this.pattern = pattern;
 	}
 
-	//TODO: reverse traversal order
-	// so that identifying x with first index and y with second
-	// we traverse the square clockwise from top left
+	//N.b. This traverses the square anticlockwise
+	// as given in graphical display,
+	// but clockwise when given as array literals
 	public boolean[][] sides() {
 		boolean[][] sides = new boolean[4][pattern.length-1];
 		
